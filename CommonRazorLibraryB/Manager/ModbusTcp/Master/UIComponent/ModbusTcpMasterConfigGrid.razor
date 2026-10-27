@@ -1,0 +1,35 @@
+﻿@using DevExpress.Blazor
+
+<DxGrid Data="Data"
+		PageSize="PageSize"
+		ShowGroupPanel="false"
+		EditMode="GridEditMode.EditCell"
+		EditModelSaving="EditModelSaving"
+		KeyFieldName="@nameof(ModbusTcpMasterConfig.device)">
+
+	<ToolbarTemplate>
+		@if (!string.IsNullOrWhiteSpace(Title))
+		{
+			<DxToolbar Title="@Title" />
+		}
+	</ToolbarTemplate>
+
+	<Columns>
+		<DxGridDataColumn FieldName=@nameof(ModbusTcpMasterConfig.device) Caption="ModbusTcp Master" ReadOnly="true" MinWidth="150" />
+		<DxGridDataColumn FieldName=@nameof(ModbusTcpMasterConfig.Ip) Caption="Ip" ReadOnly="false" MinWidth="150" />
+		<DxGridDataColumn FieldName=@nameof(ModbusTcpMasterConfig.Port) Caption="Port" ReadOnly="false" MinWidth="150" />
+		<DxGridDataColumn FieldName=@nameof(ModbusTcpMasterConfig.Enable) Caption="Enable" ReadOnly="false" MinWidth="150" />
+	</Columns>
+
+</DxGrid>
+<br />
+
+@code {
+	[Parameter] public string? Title { get; set; }
+
+	[Parameter] public IEnumerable<ModbusTcpMasterConfig>? Data { get; set; }
+
+	[Parameter] public int PageSize { get; set; } = 12;
+
+	[Parameter] public EventCallback<GridEditModelSavingEventArgs> EditModelSaving { get; set; }
+}
