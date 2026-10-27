@@ -1,0 +1,37 @@
+﻿@using DevExpress.Blazor
+
+<DxGrid Data="Data"
+		PageSize="PageSize"
+		ShowGroupPanel="false"
+		EditMode="GridEditMode.EditCell"
+		EditModelSaving="EditModelSaving"
+		KeyFieldName="@nameof(ModbusRtuConfig.com)">
+
+	<ToolbarTemplate>
+		@if (!string.IsNullOrWhiteSpace(Title))
+		{
+			<DxToolbar Title="@Title" />
+		}
+	</ToolbarTemplate>
+
+	<Columns>
+		<DxGridDataColumn FieldName=@nameof(ModbusRtuConfig.com) Caption="COM" ReadOnly="true" MinWidth="100" />
+		<DxGridDataColumn FieldName=@nameof(ModbusRtuConfig.baudrate) Caption="Baudrate" ReadOnly="false" MinWidth="100" />
+		<DxGridDataColumn FieldName=@nameof(ModbusRtuConfig.parity) Caption="Parity" ReadOnly="false" MinWidth="100" />
+		<DxGridDataColumn FieldName=@nameof(ModbusRtuConfig.dataBits) Caption="DataBits" ReadOnly="false" MinWidth="100" />
+		<DxGridDataColumn FieldName=@nameof(ModbusRtuConfig.stopBits) Caption="StopBits" ReadOnly="false" MinWidth="100" />
+		<DxGridDataColumn FieldName=@nameof(ModbusRtuConfig.enable) Caption="Enalbe" ReadOnly="false" MinWidth="100" />
+	</Columns>
+
+</DxGrid>
+<br />
+
+@code {
+	[Parameter] public string? Title { get; set; }
+
+	[Parameter] public IEnumerable<ModbusRtuConfig>? Data { get; set; }
+
+	[Parameter] public int PageSize { get; set; } = 12;
+
+	[Parameter] public EventCallback<GridEditModelSavingEventArgs> EditModelSaving { get; set; }
+}
