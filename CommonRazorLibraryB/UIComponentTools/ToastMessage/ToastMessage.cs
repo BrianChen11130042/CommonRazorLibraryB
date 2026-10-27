@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DevExpress.Blazor;
+
+namespace CommonRazorLibraryB.UIComponentTools.ToastMessage
+{
+    public delegate Task dgNotifyToastMsg(string title, string msg, ToastRenderStyle style);
+
+    public class ToastMessage : IToastMessage
+    {
+        public event dgNotifyToastMsg dgNotifyToast;
+
+        public void NotifyInfo(string msg)
+        {
+            dgNotifyToast?.Invoke("系統訊息", msg, ToastRenderStyle.Info);
+        }
+
+        public void NotifySuccess(string msg)
+        {
+            dgNotifyToast?.Invoke("系統訊息", msg, ToastRenderStyle.Success);
+        }
+
+        public void NotifyError(string msg)
+        {
+            dgNotifyToast?.Invoke("系統訊息", msg, ToastRenderStyle.Danger);
+        }
+    }
+}
