@@ -8,6 +8,7 @@ using CommonRazorLibraryB.FeaturePackage.UserPack.Data;
 using CommonRazorLibraryB.FeaturePackage.UserPack.DtoModel;
 using CommonRazorLibraryB.FeaturePackage.UserPack.EFModel;
 using CommonRazorLibraryB.FeaturePackage.UserPack.Tool;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CommonRazorLibraryB.FeaturePackage.UserPack.Application
