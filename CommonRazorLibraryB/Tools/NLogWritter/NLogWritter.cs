@@ -34,11 +34,11 @@ namespace CommonRazorLibraryB.Tools.NLogWritter
             logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
         }
 
-        public async Task HandleNLog(ENLogLevel status, string msg)
+        public async Task HandleNLog(ENLogLevel level, string msg)
         {
             mutex.WaitOne();
 
-            switch (status)
+            switch (level)
             {
                 case ENLogLevel.Event:
                     logger.Trace(msg);

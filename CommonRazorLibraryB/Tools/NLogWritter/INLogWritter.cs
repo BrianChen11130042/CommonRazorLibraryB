@@ -13,11 +13,11 @@ namespace CommonRazorLibraryB.Tools.NLogWritter
 
         void RemoveNLogObserver(INLogObserver o);
 
-        Task NotifyNLog(ENLogLevel status, string msg);
+        Task NotifyNLog(ENLogLevel level, string msg);
     }
 
     public interface INLogObserver
     {
-        Task HandleNLog(ENLogLevel status, string msg);
+        Task HandleNLog(ENLogLevel level, string msg);
     }
 }
