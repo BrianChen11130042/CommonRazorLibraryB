@@ -1,0 +1,33 @@
+﻿@using CommonRazorLibraryB.Library.TGITwistingMachine.Config
+@using DevExpress.Blazor
+
+<DxGrid Data="Data"
+		PageSize="PageSize"
+		ShowGroupPanel="false"
+		EditMode="GridEditMode.EditCell"
+		EditModelSaving="EditModelSaving"
+        KeyFieldName="@nameof(TgiTwistConfig.device)">
+
+	<ToolbarTemplate>
+		@if (!string.IsNullOrWhiteSpace(Title))
+		{
+			<DxToolbar Title="@Title" />
+		}
+	</ToolbarTemplate>
+
+	<Columns>
+		<DxGridDataColumn FieldName=@nameof(TgiTwistConfig.device) Caption="Twisting Machine" ReadOnly="true" MinWidth="150" />
+		<DxGridDataColumn FieldName=@nameof(TgiTwistConfig.master) Caption="ModbusTcp Master" ReadOnly="false" MinWidth="150" />
+		<DxGridDataColumn FieldName=@nameof(TgiTwistConfig.supplier) Caption="Supplier" ReadOnly="false" MinWidth="150" />
+	</Columns>
+</DxGrid>
+
+@code {
+	[Parameter] public string? Title { get; set; }
+
+	[Parameter] public IEnumerable<TgiTwistConfig>? Data { get; set; }
+
+	[Parameter] public int PageSize { get; set; } = 12;
+
+	[Parameter] public EventCallback<GridEditModelSavingEventArgs> EditModelSaving { get; set; }
+}
