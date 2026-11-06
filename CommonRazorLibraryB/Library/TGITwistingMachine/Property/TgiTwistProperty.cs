@@ -36,10 +36,10 @@ namespace CommonRazorLibraryB.Library.TGITwistingMachine.Property
         public ushort machineStatus { get; set; }
 
         //通知作業列表
-        public ushort taskStartedInform { get; set; }
+        public ushort missionStartedInform { get; set; }
 
         //完成作業列表
-        public ushort taskCompletedInform { get; set; }
+        public ushort missionCompletedInform { get; set; }
 
         //自動模式
         public ushort isAutoMode { get; set; }

@@ -49,8 +49,8 @@ namespace CommonRazorLibraryB.Library.TGITwistingMachine.Adapter
             t.property.get.machineNumber = t.arrayRcmd[0];
             t.property.get.processState = t.arrayRcmd[1];
             t.property.get.machineStatus = t.arrayRcmd[2];
-            t.property.get.taskStartedInform = t.arrayRcmd[3];
-            t.property.get.taskCompletedInform = t.arrayRcmd[4];
+            t.property.get.missionStartedInform = t.arrayRcmd[3];
+            t.property.get.missionCompletedInform = t.arrayRcmd[4];
             t.property.get.isAutoMode = t.arrayRcmd[5];
         }
     }
