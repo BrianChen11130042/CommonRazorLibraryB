@@ -10,6 +10,8 @@ namespace CommonRazorLibraryB.Library.TGITwistingMachine.Property
     {
         public string device { get; set; }
 
+        public int machineNumber { get; set; }
+
         public SetTgiTwist set { get; set; } = new SetTgiTwist();
 
         public GetTgiTwist get { get; set; } = new GetTgiTwist();

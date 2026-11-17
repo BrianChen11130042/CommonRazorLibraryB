@@ -8,6 +8,8 @@ namespace CommonRazorLibraryB.Library.TGITwistingMachine.Adapter
 {
     public interface ITgiTwistAdapter<T>
     {
+        Task GetMachineNumber(T t);
+
         Task<bool> GetTwistStatus(T t);
 
         Task<bool> SetTaskCompletion(T t);

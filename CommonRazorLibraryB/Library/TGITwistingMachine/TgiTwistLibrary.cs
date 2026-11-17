@@ -86,6 +86,11 @@ namespace CommonRazorLibraryB.Library.TGITwistingMachine
             return adapter[c.supplier];
         }
 
+        public async Task GetMachineNumber(T t)
+        {
+            await SelectAdapter(t).GetMachineNumber(Packages[t]);
+        }
+
         public async Task<bool> GetTwistStatus(T t)
         {
             return await SelectAdapter(t).GetTwistStatus(Packages[t]);

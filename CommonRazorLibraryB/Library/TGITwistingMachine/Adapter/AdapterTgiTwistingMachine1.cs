@@ -163,6 +163,11 @@ namespace CommonRazorLibraryB.Library.TGITwistingMachine.Adapter
                 return false;
             }
         }
+
+        public async Task GetMachineNumber(TgiTwistPackage t)
+        {
+            t.property.machineNumber = 1;
+        }
     }
 
     public partial class AdapterTgiTwistingMachine1
